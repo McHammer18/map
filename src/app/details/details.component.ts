@@ -18,10 +18,12 @@ export class DetailsComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
+    //Initialize Countries
     this.getCountry();
   }
 
   getCountry(): void{
+    //Grab country data
     const id = String(this.route.snapshot.paramMap.get('id'));
     this.countryService.getCountry(id)
     .subscribe(country => this.country = country);
