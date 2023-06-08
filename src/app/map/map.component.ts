@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../country';
 import { CountryService } from '../country.service';
+import { COUNTRIES } from '../mock-countries';
 
 @Component({
   selector: 'app-map',
@@ -8,9 +9,14 @@ import { CountryService } from '../country.service';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit{
-  countries: Country[] = [];
 
   constructor(private countryService: CountryService) { }
+  countries = COUNTRIES;
+  selectedCountry?: Country;
+
+  onSelect(country: Country): void {
+    this.selectedCountry = country;
+  }
 
   ngOnInit(): void {
     this.getCountries();
