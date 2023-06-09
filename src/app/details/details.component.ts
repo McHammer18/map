@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Country } from '../country';
 import { CountryService } from '../country.service';
 import { ActivatedRoute } from '@angular/router';
@@ -8,25 +8,26 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit{
-  country: Country | undefined;
+export class DetailsComponent{
+  @Input() country?: Country;
+  //country: Country | undefined;
 
-  constructor(
-    private route: ActivatedRoute,
-    private countryService: CountryService,
-    private location:Location
-  ){}
+  //constructor(
+    //private route: ActivatedRoute,
+    //private countryService: CountryService,
+   // private location:Location
+  //){}
 
-  ngOnInit(): void {
+  //ngOnInit(): void {
     //Initialize Countries
-    this.getCountry();
-  }
+  //  this.getCountry();
+ // }
 
-  getCountry(): void{
+  //getCountry(): void{
     //Grab country data
-    const id = String(this.route.snapshot.paramMap.get('id'));
-    this.countryService.getCountry(id)
-    .subscribe(country => this.country = country);
-  }
+  //  const id = String(this.route.snapshot.paramMap.get('id'));
+  //  this.countryService.getCountry(id)
+  //  .subscribe(country => this.country = country);
+ // }
 
 }
