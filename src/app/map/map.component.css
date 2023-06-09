@@ -13,7 +13,7 @@ body{
 .details{
     right:0;
     color: azure;
-    position: relative;
+    position: absolute;
     grid-column: 3/4;
     padding: 5px;
     width: fit-content;
