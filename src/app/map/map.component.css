@@ -27,3 +27,6 @@ svg{
 svg path{
     cursor: pointer;
 }
+svg path:hover{
+    fill: darkcyan;
+}
