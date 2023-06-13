@@ -1,10 +1,7 @@
 import { Time } from "@angular/common";
 
 export interface Country {
-    id: string;
+    d: string;
     name: string;
-    capitol: string;
-    region: string;
-    incomelvl: string;
-    population: string;
+    id: string;
 }

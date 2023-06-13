@@ -9,25 +9,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent{
-  @Input() country?: Country;
-  //country: Country | undefined;
+  @Input() country?: any;
+  constructor(
+    private route: ActivatedRoute,
+    private countryService: CountryService,
+  ){}
 
-  //constructor(
-    //private route: ActivatedRoute,
-    //private countryService: CountryService,
-   // private location:Location
-  //){}
-
-  //ngOnInit(): void {
-    //Initialize Countries
-  //  this.getCountry();
- // }
-
-  //getCountry(): void{
+  getCountry(): void{
     //Grab country data
-  //  const id = String(this.route.snapshot.paramMap.get('id'));
-  //  this.countryService.getCountry(id)
-  //  .subscribe(country => this.country = country);
- // }
+    const id = String(this.route.snapshot.paramMap.get('id'));
+    this.countryService.getCountryData(id)
+    .subscribe(country => this.country = country);
+  }
 
 }
