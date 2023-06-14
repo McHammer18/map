@@ -7,7 +7,7 @@
       </svg>
 
       <div class="details" *ngIf="countryData, countryTime" >
-        <h2>{{countryData[0].name | uppercase}} Details:</h2>
+        <h2>{{countryData[0].name}} Details:</h2>
         <div><span>Capital: </span>{{countryData[0].capitalCity}}</div>
         <div><span>Region:</span>{{countryData[0].region.value}}</div>
         <div><span>IncomeLevel: </span>{{countryData[0].incomeLevel.value}}</div>
