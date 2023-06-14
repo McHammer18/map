@@ -8,18 +8,22 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent{
-  @Input() country?: any;
+export class DetailsComponent implements OnInit{
+  country: Country | undefined;
   constructor(
     private route: ActivatedRoute,
     private countryService: CountryService,
   ){}
 
-  getCountry(): void{
-    //Grab country data
-    const id = String(this.route.snapshot.paramMap.get('id'));
-    this.countryService.getCountryData(id)
-    .subscribe(country => this.country = country);
+  ngOnInit(): void {
+    this.getCountry();
   }
 
+  getCountry(): void{
+    const id = String(this.route.snapshot.paramMap.get('id'));
+
+    this.countryService.getCountryData(id).subscribe(country => this.country = country)
+    this.countryService.getCountryTime(id).subscribe(country => this.country = country)
+  }
+  
 }
