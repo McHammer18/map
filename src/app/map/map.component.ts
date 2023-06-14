@@ -19,8 +19,8 @@ export class MapComponent{
   onSelect(country: string): void {
     //Function used to declare the selection of a country
     this.selectedCountry = country;
-    this.countryService.getCountryData(country).subscribe((response: any[]) => {this.countryData = response[1]})
-    this.countryService.getCountryTime(country).subscribe((response: any[]) => {this.countryTime = response, console.log(this.countryTime)})
+    this.countryService.getCountryData(country).subscribe((response: any[]) => {this.countryData = response[1], console.log(this.countryData)});
+    this.countryService.getCountryTime(country).subscribe((response: any[]) => {this.countryTime = response, console.log(this.countryTime)});
   }
 
 }
