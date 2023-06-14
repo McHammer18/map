@@ -6,12 +6,12 @@
         </path>
       </svg>
 
-      <div class="details" *ngIf="countryData">
+      <div class="details" *ngIf="countryData, countryTime" >
         <h2>{{countryData[0].name | uppercase}} Details:</h2>
         <div><span>Capital: </span>{{countryData[0].capitalCity}}</div>
         <div><span>Region:</span>{{countryData[0].region.value}}</div>
         <div><span>IncomeLevel: </span>{{countryData[0].incomeLevel.value}}</div>
         <div><span>Longitude/Latitude: </span>{{countryData[0].longitude}}/{{countryData[0].latitude}}</div>
-        <div><span>Date/Time: </span>{{countryData[1].datetime}}</div>
+        <div><span>Date/Time: </span>{{countryTime.datetime}}</div>
     </div>
 </body>

@@ -12,14 +12,15 @@ export class MapComponent{
 
   constructor(private countryService:CountryService) {}
   countryData: any = [];
+  countryTime: any = [];
   countries = COUNTRIES;
   selectedCountry?: string;
 
   onSelect(country: string): void {
     //Function used to declare the selection of a country
     this.selectedCountry = country;
-    this.countryService.getCountryData(country).subscribe((response: any[]) => {this.countryData = response[1], console.log(this.countryData)})
-    this.countryService.getCountryTime(country).subscribe((response: any[]) => {this.countryData = this.countryData.push(response), console.log(this.countryData)})
+    this.countryService.getCountryData(country).subscribe((response: any[]) => {this.countryData = response[1]})
+    this.countryService.getCountryTime(country).subscribe((response: any[]) => {this.countryTime = response, console.log(this.countryTime)})
   }
 
 }
